@@ -12,17 +12,32 @@ package ca.ualberta.cs.lonelytwitter;
 import java.util.Date;
 
 /**
- * Created by Sadman on 2017-09-14.
+ * Sad mood is a Mood
+ * @see Mood
+ * @author Sadman
+ * @version 1.0
+ * @since 1.0
  */
 
 public class Sad extends Mood {
+    /**
+     * @see Mood
+     */
     public Sad() {
     }
 
+    /**
+     * @see Mood
+     * @param date
+     */
     public Sad(Date date) {
         super(date);
     }
 
+    /**
+     * Custom string for Sad Mood
+     * @return string
+     */
     @Override
     public String toString() {
         return "I am sad :(";
