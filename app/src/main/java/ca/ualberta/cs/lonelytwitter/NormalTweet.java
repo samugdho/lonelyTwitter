@@ -12,7 +12,12 @@ package ca.ualberta.cs.lonelytwitter;
 import java.util.Date;
 
 /**
- * Created by Sadman on 2017-09-14.
+ * This tweet is not Important
+ * @author Sadman
+ * @version 1.0
+ * @since 1.0
+ * @see ImportantTweet
+ *
  */
 
 public class NormalTweet extends Tweet {
@@ -20,10 +25,20 @@ public class NormalTweet extends Tweet {
         super(message);
     }
 
+    /**
+     * @see Tweet
+     * @param message
+     * @param date
+     */
     public NormalTweet(String message, Date date) {
         super(message, date);
     }
 
+    /**
+     * Check if Tweet is important;
+     * Returns false
+     * @return boolean
+     */
     @Override
     public Boolean isImportant() {
         return Boolean.FALSE;

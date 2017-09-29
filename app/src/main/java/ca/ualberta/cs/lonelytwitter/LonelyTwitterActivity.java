@@ -2,7 +2,7 @@
  * Class Name: LonelyTwitterActivity
  * Version: Version 1.0
  * Date: September 28, 2017
- * Copyright (c) TEAM Y, CMPUT 301, University of Alberta - All Rights Reserved.
+ * Copyright (c) TEAM SSMAD, CMPUT 301, University of Alberta - All Rights Reserved.
  * You may use, distribute, or modify this code under terms and conditions of the
  * Code of Students Behaviour at University of Alberta
  */
@@ -30,16 +30,28 @@ import java.io.OutputStreamWriter;
 import java.lang.reflect.Type;
 import java.util.ArrayList;
 
+/**
+ * Represents an activity
+ * @author Sadman
+ * @version 1.0
+ * @since 1.0
+ * @see Tweet
+ *
+ */
 public class LonelyTwitterActivity extends Activity {
-	// LAB 4 BRANCH
+
 	private static final String FILENAME = "file.sav";
 	private EditText bodyText;
 	private ListView oldTweetsList;
-
 	private ArrayList<Tweet> tweets = new ArrayList<Tweet>();
 	private ArrayAdapter<Tweet> adapter;
 
-	/** Called when the activity is first created. */
+    /**
+     * Called when the activity starts
+     * Connects buttons to actions
+     * @param savedInstanceState
+     *
+     */
 	@Override
 	public void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
@@ -77,7 +89,13 @@ public class LonelyTwitterActivity extends Activity {
 		});
 	}
 
-
+    /**
+     * Loads old tweets from file
+     * Initializes adapter with a Tweets array
+     * @see Tweet
+     * @see ArrayAdapter
+     *
+     */
 	@Override
 	protected void onStart() {
 		// TODO Auto-generated method stub
@@ -87,6 +105,13 @@ public class LonelyTwitterActivity extends Activity {
 				R.layout.list_item, tweets);
 		oldTweetsList.setAdapter(adapter);
 	}
+
+    /**
+     * Loads old tweets from file
+     * makes empty list of tweets on fail load file
+     * @see Gson
+     * @throws FileNotFoundException
+     */
 	private void loadFromFile() {
 		try {
 			FileInputStream fis = openFileInput(FILENAME);
@@ -103,7 +128,13 @@ public class LonelyTwitterActivity extends Activity {
 		}
 
 	}
-	
+
+    /**
+     * Saves current tweets list to file
+     * @see Gson
+     * @throws FileNotFoundException
+     * @throws IOException
+     */
 	private void saveInFile() {
 		try {
 			FileOutputStream fos = openFileOutput(FILENAME,

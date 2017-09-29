@@ -9,7 +9,11 @@
 package ca.ualberta.cs.lonelytwitter;
 
 /**
- * Created by Sadman on 2017-09-14.
+ * Throws exception if tweet message is greater than 140 characters
+ * @author Sadman
+ * @version 1.0
+ * @since 1.0
+ *
  */
 
 public class TweetTooLongException extends Exception {

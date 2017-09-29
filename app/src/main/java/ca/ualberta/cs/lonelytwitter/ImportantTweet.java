@@ -12,7 +12,11 @@ package ca.ualberta.cs.lonelytwitter;
 import java.util.Date;
 
 /**
- * Created by Sadman on 2017-09-14.
+ * Designates tweet as important
+ * @author Sadman
+ * @version 1.0
+ * @since 1.0
+ *
  */
 
 public class ImportantTweet extends Tweet {

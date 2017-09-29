@@ -26,7 +26,7 @@ public abstract class Tweet implements Tweetable{
     private ArrayList<Mood> moods = new ArrayList<Mood>();
 
     /**
-     *
+     * Constructor with only message
      * @param message
      */
     public Tweet(String message){
@@ -35,8 +35,7 @@ public abstract class Tweet implements Tweetable{
     }
 
     /**
-     * Constructs a Tweet object
-     *
+     * Constructs a Tweet object with message and date
      * @param message tweet message
      * @param date tweet date
      */
@@ -44,6 +43,12 @@ public abstract class Tweet implements Tweetable{
         this.message = message;
         this.date = date;
     }
+
+    /**
+     * Set the date
+     * Not used yet
+     * @param date
+     */
     public void setDate(Date date){
         this.date = date;
     }
@@ -64,25 +69,27 @@ public abstract class Tweet implements Tweetable{
     }
     public abstract Boolean isImportant();
 
+    /**
+     * Gets the date when tweet was created
+     * @return date
+     */
     public Date getDate(){
         return date;
     }
 
+    /**
+     * get the message for the tweet
+     * @return message
+     */
     public String getMessage() {
         return message;
     }
 
-    public ArrayList<Mood> getMoods() {
-        return moods;
-    }
 
-    public void setMoods(ArrayList<Mood> moods) {
-        this.moods = moods;
-    }
-    public void addMood(Mood mood) {
-        this.moods.add(mood);
-    }
-
+    /**
+     * Returns the date | message
+     * @return string
+     */
     @Override
     public String toString() {
         return date.toString() + " | " + message;

@@ -12,17 +12,32 @@ package ca.ualberta.cs.lonelytwitter;
 import java.util.Date;
 
 /**
- * Created by Sadman on 2017-09-14.
+ * Happy Mood for tweets
+ * @author Sadman
+ * @version 1.0
+ * @since 1.0
+ * @see Mood
  */
 
 public class Happy extends Mood {
+    /**
+     * Does nothing for now...
+     */
     public Happy() {
     }
 
+    /**
+     * Does nothing for now...
+     * @param date
+     */
     public Happy(Date date) {
         super(date);
     }
 
+    /**
+     * Custom string for Happy Mood
+     * @return string
+     */
     @Override
     public String toString() {
         return "I am happy XD";
